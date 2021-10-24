@@ -37,3 +37,6 @@ quorum_size = 5
 layers_range = range(1, 5)
 result = simulate(iteration_count, layers_range, quorum_size)
 ```
+
+## Results
+Some generated results are added as tikz figures under results/results.txt. Beside that additional 3d simulation results are added inside the additional_results folder. 
