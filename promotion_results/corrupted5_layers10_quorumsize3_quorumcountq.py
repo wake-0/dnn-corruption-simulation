@@ -47,8 +47,8 @@ def fixed_corrupted_generator(number_of_validators, iterations, number_of_corrup
     :rtype: int
     """
     for _ in range(iterations):
-        # always return a single corrupted validator
-        yield 1
+        # always return five corrupted validators
+        yield 5
 
 def binom_corrupted_generator(number_of_validators, iterations, ratio=0.5):
     """ Produce a binomial distributed number of corrupted nodes for n iterations.

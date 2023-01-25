@@ -47,8 +47,8 @@ def fixed_corrupted_generator(number_of_validators, iterations, number_of_corrup
     :rtype: int
     """
     for _ in range(iterations):
-        # always return a single corrupted validator
-        yield 1
+        # always return ten corrupted validator
+        yield 10
 
 def binom_corrupted_generator(number_of_validators, iterations, ratio=0.5):
     """ Produce a binomial distributed number of corrupted nodes for n iterations.
@@ -144,10 +144,10 @@ def simulate(iterations, number_of_layers, quorum_size):
         number_of_corrupted[quorum_count] = 0
 
         min_quorum_threshold = quorum_size // 2 + 1
-
         for combination in create_random_corrupted_combinations(validators_count, iterations):
-            for quorum in split_into_layers(combination, number_of_layers, quorum_size, quorum_count):
-
+            layers = list(split_into_layers(combination, number_of_layers, quorum_size, quorum_count))
+            print(layers)
+            for quorum in layers:
                 current_threshold = sum(quorum)
 
                 # Is no quorum
